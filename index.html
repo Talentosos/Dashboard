@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Logístico</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Dashboard de Entregas Atrasadas</h1>
+    <p>Análise de desempenho logístico</p>
+</header>
+
+<section class="filtros">
+
+    <select id="filtroRegiao">
+        <option value="">Todas as Regiões</option>
+    </select>
+
+    <select id="filtroTransportadora">
+        <option value="">Todas as Transportadoras</option>
+    </select>
+
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <h3>Total de Entregas</h3>
+        <span id="totalEntregas"></span>
+    </div>
+
+    <div class="card destaque">
+        <h3>Entregas Atrasadas</h3>
+        <span id="totalAtrasadas"></span>
+    </div>
+
+    <div class="card">
+        <h3>% de Atraso</h3>
+        <span id="percentual"></span>
+    </div>
+
+    <div class="card">
+        <h3>Maior Atraso</h3>
+        <span id="maiorAtraso"></span>
+    </div>
+
+</section>
+
+<section class="graficos">
+
+    <div class="grafico">
+        <h2>Atrasos por Região</h2>
+        <canvas id="graficoRegiao"></canvas>
+    </div>
+
+    <div class="grafico">
+        <h2>Atrasos por Transportadora</h2>
+        <canvas id="graficoTransportadora"></canvas>
+    </div>
+
+</section>
+
+<section class="alertas">
+    <h2>Alertas Operacionais</h2>
+
+    <div id="caixaAlertas"></div>
+</section>
+
+<section class="ranking">
+    <h2>Ranking de Entregas Críticas</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Transportadora</th>
+            <th>Região</th>
+            <th>Dias de Atraso</th>
+            <th>Prioridade</th>
+        </tr>
+        </thead>
+
+        <tbody id="tabelaAtrasos"></tbody>
+
+    </table>
+</section>
+
+<script src="dados.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
